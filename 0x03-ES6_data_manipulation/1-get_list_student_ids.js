@@ -1,11 +1,9 @@
-export default function getListStudentIds(arr) {
-  if (!(arr instanceof Array)) {
+export default function getListStudentIds(students) {
+  if (!(students instanceof Array)) {
     return [];
   }
 
-  const output = [];
-  for (const element of arr) {
-    output.push(element.id);
-  }
-  return output;
+  const ids = students.map(student => student.id);
+
+  return ids;
 }
