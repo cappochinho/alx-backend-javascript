@@ -1,13 +1,17 @@
 function calculateNumber(a, b, type) {
-  const roundA = Math.round(a);
-  const roundB = Math.round(b);
-  if (type === 'SUM') return roundA + roundB;
-  else if (type === 'SUBTRACT') return roundA - roundB;
-  else if (type === 'DIVIDE') {
-    if (roundB === 0) return 'Error';
-    return roundA / roundB;
-  } else {
-    throw new Error('Invalid type');
+  switch (type) {
+    case 'SUM':
+      return Math.round(a) + Math.round(b);
+    case 'SUBTRACT':
+      return Math.round(a) - Math.round(b);
+    case 'DIVIDE':
+      if (Math.round(b) === 0) {
+        return 'Error';
+      }
+      return Math.round(a) / Math.round(b);
+    default:
+      return 'Invalid operation';
   }
 }
+
 module.exports = calculateNumber;
