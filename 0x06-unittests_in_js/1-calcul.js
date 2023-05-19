@@ -6,6 +6,8 @@ function calculateNumber(a, b, type) {
   else if (type === 'DIVIDE') {
     if (roundB === 0) return 'Error';
     return roundA / roundB;
+  } else {
+    throw new Error('Invalid type');
   }
 }
 module.exports = calculateNumber;
